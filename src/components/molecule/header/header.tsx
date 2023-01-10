@@ -8,7 +8,7 @@ export const Header: FC<THeader> = () => {
   return (
     <Content as="header" align="center" margin={`${theme.size.m} 0`}>
       <Text size={theme.size.l} bold italic>
-        Form Em
+        FormEmu
       </Text>
     </Content>
   );
