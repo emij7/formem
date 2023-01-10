@@ -29,5 +29,17 @@ declare module "styled-components" {
       light: theme.color.light;
       warning: theme.color.warning;
     };
+    spacing: {
+      s: theme.spacing.s;
+      m: theme.spacing.m;
+      l: theme.spacing.l;
+      xl: theme.spacing.xl;
+    };
+    size: {
+      s: theme.size.s;
+      m: theme.size.m;
+      l: theme.size.l;
+      xl: theme.size.xl;
+    };
   }
 }
