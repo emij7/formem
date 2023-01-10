@@ -36,16 +36,14 @@ export const Value = styled.input<{ fill?: boolean; label?: string }>`
   }
 `;
 
-export const Area = styled.textarea<{ label?: string }>`
+export const Select = styled.select<{ label?: string }>`
   background-color: ${({ theme }) => theme.color.gray.light};
   border-radius: 0.25rem;
   border: ${({ theme }) => `1px solid ${theme.color.gray.normal}`};
   font-size: 1rem;
-  height: 6rem;
   margin-top: ${({ label }) => (label ? "0.5rem" : "0")};
-  min-width: 22.5rem;
   padding: 0.5rem;
-  width: inherit;
+  width: 100%;
 
   &:hover {
     border: ${({ theme }) => `1px solid ${theme.color.primary.normal}`};
@@ -65,3 +63,5 @@ export const styledSuggestions = (isFocused: boolean) => css`
   position: relative;
   top: 0;
 `;
+
+export const Option = styled.option<{}>``;

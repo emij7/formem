@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { theme } from "../../../styles/global";
 import { Text } from "../text/text";
-import { Area, StyledInput, Value } from "./input.styles";
+import { Option, Select, StyledInput, Value } from "./input.styles";
 import { TInput } from "./input.types";
 
 export const Input: FC<TInput> = ({
@@ -14,6 +14,7 @@ export const Input: FC<TInput> = ({
   onChange,
   type = "text",
   value,
+  options,
   ...props
 }) => {
   return (
@@ -28,10 +29,16 @@ export const Input: FC<TInput> = ({
           {helper}
         </Text>
       )}
-      {type === "textarea" ? (
-        <Area id={id || label} label={label} name={name} onChange={onChange}>
-          {value}
-        </Area>
+      {type === "select" ? (
+        <Select id={id || label} label={label} name={name} onChange={onChange}>
+          {options?.map((option, index) => {
+            return (
+              <Option key={index} value={option.value}>
+                {option.label}
+              </Option>
+            );
+          })}
+        </Select>
       ) : (
         <Value
           id={id || label}

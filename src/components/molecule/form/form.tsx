@@ -11,17 +11,19 @@ export const Form: FC<TForm> = () => {
     required?: boolean;
     options?: Array<object>;
   };
-  const [form, setForm] = useState([]);
+  const [form, setForm] = useState([]); //State que guarda lo que trae el JSON
   const [formValues, setFormValues] = useState<{
     [key: string]: string;
   }>({});
   const onChangeValue = (
+    //funcion para guardar cambios de input en formValues
     event:
-      | React.ChangeEvent<HTMLTextAreaElement>
       | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
   ) => {
     const inputValue = event.currentTarget.value;
     setFormValues({ ...formValues, [event.target.name]: inputValue });
+    console.log(formValues);
   };
   const formDB = async () => {
     let res = await fetch("db.json");
@@ -37,6 +39,7 @@ export const Form: FC<TForm> = () => {
       {form.map((item: item, index) => {
         return (
           <Input
+            align="center"
             key={index}
             label={item.label}
             name={item.name}
@@ -44,6 +47,8 @@ export const Form: FC<TForm> = () => {
             value={formValues[item.type]}
             required={item.required}
             onChange={onChangeValue}
+            options={item.options}
+            hideLabel={item.type === "submit" ? true : false}
           ></Input>
         );
       })}
