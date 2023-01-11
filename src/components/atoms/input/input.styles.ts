@@ -25,7 +25,7 @@ export const Value = styled.input<{ fill?: boolean; label?: string }>`
   font-size: 1rem;
   margin-top: ${({ label }) => (label ? "0.5rem" : "0")};
   padding: 0.5rem;
-  width: 100%;
+  width: ${({ width }) => width || "100%"};
   accent-color: ${({ theme }) => theme.color.gray.dark};
   &:hover {
     border: ${({ theme }) => `1px solid ${theme.color.primary.normal}`};
