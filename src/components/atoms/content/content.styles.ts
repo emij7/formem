@@ -6,6 +6,7 @@ export const StyledContent = styled.div<TContent>`
   background: ${({ background }) => background};
   cursor: ${({ onClick }) => onClick && "pointer"};
   background-color: ${({ backgroundColor }) => backgroundColor};
+  border: ${({ border }) => border || "none"};
   border-radius: ${({ borderRadius }) => borderRadius};
   display: flex;
   flex: ${({ flex }) => flex};

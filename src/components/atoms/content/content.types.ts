@@ -54,6 +54,7 @@ export type TContent = {
   as?: any;
   background?: string;
   backgroundColor?: string;
+  border?: string;
   borderRadius?: string;
   children?:
     | string

@@ -7,6 +7,7 @@ export const Content: FC<TContent> = ({
   as = "div",
   background,
   backgroundColor,
+  border,
   borderRadius,
   children,
   contain,
@@ -29,6 +30,7 @@ export const Content: FC<TContent> = ({
     as={as}
     background={background}
     backgroundColor={backgroundColor}
+    border={border}
     borderRadius={borderRadius}
     contain={contain}
     direction={direction}
