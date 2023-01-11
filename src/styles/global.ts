@@ -23,6 +23,7 @@ export const theme = {
       dark: "#439A97",
       normal: "#62B6B7",
       light: "#97DECE",
+      lighter: "#d5f2ec",
     },
     warning: "#FFA726",
     light: "#FFFFFF",
@@ -48,14 +49,14 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     overscroll-behavior: none;
-    background-color: ${({ theme }) => theme.color.primary.dark};
+    background-color: ${({ theme }) => theme.color.primary.lighter};
   }
 
   *,
   *:before,
   *:after {
 	  box-sizing: border-box;
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
   }

@@ -24,6 +24,7 @@ declare module "styled-components" {
       primary: {
         dark: theme.color.primary.dark;
         light: theme.color.primary.light;
+        lighter: theme.color.primary.lighter;
         normal: theme.color.primary.normal;
       };
       light: theme.color.light;
