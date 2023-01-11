@@ -8,6 +8,7 @@ export const StyledText = styled.p<TText>`
   font-style: ${({ italic }) => italic && "italic"};
   font-weight: ${({ bold, semibold, extrabold }) =>
     extrabold ? "800" : bold ? "700" : semibold ? "600" : "400"};
+  font-family: ${({ fontFamily }) => fontFamily || "inherits"};
   margin: ${({ margin }) => margin};
   max-width: ${({ maxWidth }) => maxWidth};
   text-align: ${({ align, center }) => (align || center ? "center" : "left")};

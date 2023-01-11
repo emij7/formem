@@ -6,8 +6,8 @@ import { THeader } from "./header.types";
 
 export const Header: FC<THeader> = () => {
   return (
-    <Content as="header" align="center" margin={`${theme.size.m} 0`}>
-      <Text size={theme.size.l} bold italic>
+    <Content as="header" align="center" margin={`${theme.spacing.m} 0`}>
+      <Text fontFamily="fantasy" size={theme.size.l} bold italic>
         FormEmu
       </Text>
     </Content>

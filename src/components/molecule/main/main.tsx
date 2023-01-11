@@ -15,9 +15,11 @@ export const Main: FC<TMain> = () => {
       margin="auto"
       minHeight="5rem"
       width="80%"
+      padding={`${theme.spacing.l} 0`}
     >
-      <Text>Form name</Text>
-      <Text>Here is the form description</Text>
+      <Text align="center" semibold size={theme.size.m}>
+        DATOS PERSONALES
+      </Text>
       <Form />
     </Content>
   );

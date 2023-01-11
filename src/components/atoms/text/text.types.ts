@@ -8,6 +8,7 @@ export type TText = {
   color?: string;
   extrabold?: boolean;
   fill?: boolean;
+  fontFamily?: string;
   flex?: number;
   italic?: boolean;
   lineThrough?: boolean;

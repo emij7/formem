@@ -10,8 +10,8 @@ export const StyledInput = styled.label<{
   color: ${({ theme }) => theme.color.gray.dark};
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   justify-content: flex-start;
   margin: ${({ theme }) => theme.spacing.m};
   padding: ${({ theme }) => theme.spacing.m};
@@ -22,7 +22,7 @@ export const Value = styled.input<{ fill?: boolean; label?: string }>`
   background-color: ${({ theme }) => theme.color.gray.light};
   border-radius: 0.25rem;
   border: ${({ theme }) => `1px solid ${theme.color.gray.normal}`};
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-top: ${({ label }) => (label ? "0.5rem" : "0")};
   padding: 0.5rem;
   width: ${({ width }) => width || "100%"};

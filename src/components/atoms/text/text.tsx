@@ -11,6 +11,7 @@ export const Text: FC<TText> = ({
   color = `${theme.color.dark}`,
   extrabold,
   fill,
+  fontFamily,
   flex,
   italic,
   lineThrough,
@@ -29,6 +30,7 @@ export const Text: FC<TText> = ({
     color={color}
     extrabold={extrabold}
     fill={fill}
+    fontFamily={fontFamily}
     flex={flex}
     italic={italic}
     lineThrough={lineThrough}
