@@ -6,11 +6,20 @@ import { Text } from "../../atoms/text/text";
 
 export const Message: FC<TMessage> = ({ data }) => {
   const navigate = useNavigate();
-  // navigate("/results");
+  const onViewResults = () => {
+    navigate("/results", {
+      state: {
+        data,
+      },
+    });
+  };
   return (
     <Content as="section" align="center">
       <Text>{`${data.full_name} tu formulario fue enviado correctamente!`}</Text>
-      <Text>{`Puedes ver tus resultados aquí`}</Text>
+      <Text>Puedes ver tus resultados haz click aquí: </Text>
+      <Content onClick={onViewResults}>
+        <Text>RESULTADOS</Text>
+      </Content>
     </Content>
   );
 };
