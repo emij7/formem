@@ -62,6 +62,23 @@ export const Results: FC = () => {
           <Text size={theme.size.m}>{state.data.birth_date}</Text>
         </Content>
       </Content>
+      <Content
+        align="center"
+        backgroundColor={theme.color.blue}
+        border={`1px solid ${theme.color.gray.normal}`}
+        borderRadius={theme.size.s}
+        margin={`${theme.spacing.m} 0`}
+        onClick={() => {
+          navigate("/");
+        }}
+        padding={theme.spacing.m}
+        max-width="50%"
+        width="15rem"
+      >
+        <Text align="center" size={theme.size.m}>
+          VOLVER
+        </Text>
+      </Content>
     </Content>
   );
 };
