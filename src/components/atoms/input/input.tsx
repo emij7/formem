@@ -11,6 +11,7 @@ export const Input: FC<TInput> = ({
   id,
   label,
   name,
+  onClick,
   onChange,
   type = "text",
   value,
@@ -30,7 +31,14 @@ export const Input: FC<TInput> = ({
         </Text>
       )}
       {type === "select" ? (
-        <Select id={id || label} label={label} name={name} onChange={onChange}>
+        <Select
+          id={id || label}
+          label={label}
+          name={name}
+          onChange={onChange}
+          required
+        >
+          <Option value="">--Selecciona un país--</Option>
           {options?.map((option, index) => {
             return (
               <Option key={index} value={option.value}>

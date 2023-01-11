@@ -8,4 +8,5 @@ export type TInput = InputHTMLAttributes<HTMLInputElement> &
     hideLabel?: boolean;
     label: string;
     options?: any[];
+    submit?: boolean;
   };
