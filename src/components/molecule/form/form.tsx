@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Content } from "../../atoms/content/content";
 import { Input } from "../../atoms/input/input";
 import { Submit } from "../../atoms/submit/submit";
@@ -17,6 +17,9 @@ export const Form: FC<TForm> = () => {
 
   const [form, setForm] = useState([]); //State que guarda lo que trae el JSON
   const [submited, setSubmited] = useState(false);
+
+  const minimumDate = "1905-01-01";
+  const todayDate = new Date().toISOString().split("T")[0];
 
   const [formValues, setFormValues] = useState<{
     [key: string]: string;
@@ -48,6 +51,17 @@ export const Form: FC<TForm> = () => {
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLSelectElement>
   ) => {
+    if (event.currentTarget.type === "date") {
+      const date =
+        parseInt(event.currentTarget.value.replaceAll("-", "")) >
+        parseInt(todayDate.replaceAll("-", ""))
+          ? todayDate
+          : parseInt(event.currentTarget.value.replaceAll("-", "")) <
+            parseInt(minimumDate.replaceAll("-", ""))
+          ? minimumDate
+          : event.currentTarget.value;
+      event.currentTarget.value = date;
+    }
     const inputValue = event.currentTarget.value;
     setFormValues({ ...formValues, [event.target.name]: inputValue });
   };
@@ -61,7 +75,6 @@ export const Form: FC<TForm> = () => {
     formValues.terms_and_conditions === "false"
       ? setFormValues({ ...formValues, terms_and_conditions: "true" })
       : setFormValues({ ...formValues, terms_and_conditions: "false" });
-    console.log(formValues.terms_and_conditions);
   };
 
   const formDB = async () => {
@@ -113,6 +126,7 @@ export const Form: FC<TForm> = () => {
               required={item.required}
               onChange={onChangeValue}
               options={item.options}
+              min={minimumDate}
             ></Input>
           );
         }
