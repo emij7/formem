@@ -18,6 +18,7 @@ export type TText = {
   noWrap?: boolean;
   semibold?: boolean;
   size?: string;
+  isTitle?: boolean;
   transform?: "none" | "uppercase" | "lowercase";
   width?: string;
 };

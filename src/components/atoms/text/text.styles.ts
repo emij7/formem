@@ -15,4 +15,10 @@ export const StyledText = styled.p<TText>`
   text-decoration: ${({ lineThrough }) => lineThrough && "line-through"};
   text-transform: ${({ transform }) => transform};
   width: ${({ fill, width }) => (fill ? "100%" : width || "auto")};
+  @media (max-width: 768px) {
+    font-size: ${({ isTitle, size }) => (isTitle ? size : "1.8rem")};
+  }
+  @media (max-width: 425px) {
+    font-size: ${({ isTitle, size }) => (isTitle ? size : "1.3rem")};
+  }
 `;

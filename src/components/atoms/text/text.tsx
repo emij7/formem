@@ -20,6 +20,7 @@ export const Text: FC<TText> = ({
   medium,
   semibold,
   size = "1rem",
+  isTitle = false,
   transform,
   width,
 }) => (
@@ -39,6 +40,7 @@ export const Text: FC<TText> = ({
     medium={medium}
     semibold={semibold}
     size={size}
+    isTitle={isTitle}
     transform={transform}
     width={width}
   >
